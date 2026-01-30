@@ -13,8 +13,8 @@ const LoginPage = () => {
     try {
       await loginUser(email, password);
       console.log("Login successfully");
-      setEmail("");
-      setPassword("");
+      setEmail("admin00@gmail.com");
+      setPassword("12345678");
     } catch (error) {
       console.log(`Error during registration: ${error}`);
     }

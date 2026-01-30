@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 
-const RegisterPage = () => {
+function RegisterPage() {
   const { registerUser } = useContext(AuthContext);
 
   const [username, setUsername] = useState("");
@@ -14,9 +14,9 @@ const RegisterPage = () => {
     try {
       await registerUser(username, email, password);
       console.log("Registered successfully");
-      setUsername("");
-      setEmail("");
-      setPassword("");
+      setUsername("naveen");
+      setEmail("naveen88@gmail.com");
+      setPassword("987654321");
     } catch (error) {
       console.log(`Error during registration: ${error}`);
     }
@@ -53,8 +53,7 @@ const RegisterPage = () => {
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               className="bg-transparent w-full outline-none placeholder-white/70"
-              placeholder="Username"
-            />
+              placeholder="Username" />
           </label>
 
           {/* Email Field */}
@@ -73,8 +72,7 @@ const RegisterPage = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="bg-transparent w-full outline-none placeholder-white/70"
-              placeholder="Email"
-            />
+              placeholder="Email" />
           </label>
 
           {/* Password Field */}
@@ -88,16 +86,14 @@ const RegisterPage = () => {
               <path
                 fillRule="evenodd"
                 d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z"
-                clipRule="evenodd"
-              />
+                clipRule="evenodd" />
             </svg>
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="bg-transparent w-full outline-none placeholder-white/70"
-              placeholder="Password"
-            />
+              placeholder="Password" />
           </label>
 
           {/* Register Button */}
@@ -118,6 +114,6 @@ const RegisterPage = () => {
       </div>
     </div>
   );
-};
+}
 
 export default RegisterPage;
