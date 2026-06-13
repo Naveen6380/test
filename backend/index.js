@@ -19,7 +19,8 @@ const port = process.env.PORT || 5000;
 
 // DB conection
 
-connectDB(process.env.MONGO_URI);
+connectDB("mongodb+srv://username:password@cluster.mongodb.net/dbname?retryWrites=true&w=majority");
+// connectDB(process.env.MONGO_URI);
 
 const app = express();
 
